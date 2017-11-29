@@ -13,8 +13,8 @@
 #Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-gaps inner 15
-gaps outer 15
+gaps inner 5
+gaps outer 0
 font pango:mono 9
 set $mod Mod4
 set $term urxvt
@@ -439,7 +439,7 @@ bindsym XF86AudioRewind		exec $lilbak
 bindsym XF86AudioForward	exec $lilfor
 #bindsym XF86Phone		exec
 #bindsym XF86Tools		exec
-bindsym XF86HomePage		exec $BROWSER https://lukesmith.xyz
+bindsym XF86HomePage		exec $BROWSER https://ksphoto.me
 bindsym XF86Reload		restart
 #bindsym XF86ScrollUp		exec
 #bindsym XF86ScrollDown		exec
@@ -483,3 +483,5 @@ bindsym XF86Documents		exec $term -e ranger ~/Documents
 #bindsym XF86Bluetooth		exec
 bindsym XF86WLAN		exec --no-startup-id sudo systemctl restart NetworkManager
 
+
+exec always --no-startup-id setxkbmap dvorak
