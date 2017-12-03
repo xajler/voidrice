@@ -56,7 +56,7 @@ font-2 = fontawesome:pixelsize=10;1
 
 modules-left = i3 mpd
 #modules-center = mpd
-modules-right = filesystem hwmon volume battery date 
+modules-right = filesystem pkg hwmon volume battery vpncheck date 
 
 tray-position = right
 tray-padding = 0
@@ -372,7 +372,8 @@ hwmon-path = /sys/class/hwmon/hwmon0/temp2_input
 
 [module/hwmon]
 type = custom/script
-exec = cat /sys/class/hwmon/hwmon0/temp2_input | awk '{print substr($1, 1, 2) "°C"}'
+exec = ~/.config/polybar/temp.sh
+# exec = cat /sys/class/hwmon/hwmon1/temp2_input  | awk '{print substr($1, 1, 2) "°C"}' 
 interval = 2
 
 format-prefix = " "
@@ -416,3 +417,18 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+format-underline = #dc322f
+label = "%output:0:30%"
+exec = ~/.config/polybar/pkg.sh
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = vpn
+format-underline = #268bd2
+format-prefix = " "

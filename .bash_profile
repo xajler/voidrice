@@ -20,3 +20,5 @@ elif [[ -f /usr/bin/iceweasel ]]; then
 else
 	export BROWSER="firefox"
 fi
+
+PATH=~/.npm-global/bin:$PATH

@@ -13,8 +13,8 @@
 #Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-gaps inner 5
-gaps outer 0
+gaps inner 10
+gaps outer 5
 font pango:mono 9
 set $mod Mod4
 set $term urxvt
@@ -33,7 +33,7 @@ exec --no-startup-id nm-applet
 #Mount other drives:
 exec --no-startup-id sudo mount -a
 #Composite manager:
-#exec --no-startup-id compton --xrender-sync-fence
+exec --no-startup-id compton --xrender-sync --xrender-sync-fence
 #Refresh bash/ranger shortcuts:
 exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Try to load VGA screen if available:
