@@ -140,3 +140,6 @@ alias TO="vim ~/Creations/Videos/todo.md"
 alias v="vim"
 alias dv="setxkbmap dvorak"
 alias la="ls -al"
+
+
+export PATH=~/.npm-global/bin:$PATH
