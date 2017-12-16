@@ -1,0 +1,13 @@
+10System:    10Host aeon 10Kernel 4.9.58-1-MANJARO x86_64 10bits 64 10Desktop i3 4.14.1 10Distro Manjaro Linux
+10Machine:   10Device laptop 10System LENOVO 10product 42914BG 10v ThinkPad X220 10serial N/A
+10           10Mobo LENOVO 10model 42914BG 10serial N/A 10UEFI [Legacy] LENOVO 10v 8DET73WW (1.43 ) 10date 10/12/2016
+10Battery    10BAT0 10charge 76.5 Wh 99.6% 10condition 76.8/93.2 Wh (82%)
+10CPU:       10Dual core Intel Core i7-2640M (-HT-MCP-) 10speed/max 875/3500 MHz
+10Graphics:  10Card Intel 2nd Generation Core Integrated Graphics Controller
+10           10Display Server x11 (X.Org 1.19.5 ) 10drivers intel (unloaded: modesetting)
+10           10Resolution 1366x768@60.02hz
+10           10OpenGL renderer Mesa DRI Intel Sandybridge Mobile 10version 3.3 Mesa 17.2.2
+10Network:   10Card-1 Intel 82579LM Gigabit Network Connection (Lewisville) 10driver e1000e
+10           10Card-2 Intel Centrino Advanced-N 6205 [Taylor Peak] 10driver iwlwifi
+10Drives:    10HDD Total Size 160.0GB (7.7% used)
+10Info:      10Processes 173 10Uptime 15 min 10Memory 326.0/7870.8MB 10Client Shell wrapper 10inxi 2.3.40 

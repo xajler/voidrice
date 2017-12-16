@@ -14,7 +14,7 @@
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 gaps inner 10
-gaps outer 5
+gaps outer -3
 font pango:mono 9
 set $mod Mod4
 set $term urxvt
@@ -50,8 +50,8 @@ exec_always --no-startup-id wal -c -i ~/.config/wall.png
 exec_always --no-startup-id setxkbmap -option caps:escape
 #exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 #Remap Menu button to Super:
-#exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
-bindsym Menu	exec --no-startup-id xmodmap -e 'keycode 135 = Super_R' 
+#exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_L'
+bindsym Menu	exec --no-startup-id xmodmap -e 'keycode 135 = Super_L' 
 #Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 #Disables touchpad; you might like like this one! (I only use the ThinkPad trackpoint).
