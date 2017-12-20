@@ -140,6 +140,9 @@ alias TO="vim ~/Creations/Videos/todo.md"
 alias v="vim"
 alias dv="setxkbmap dvorak"
 alias la="ls -al"
+alias fake="mono /home/x/src/qualtrak/Fake/tools/FAKE.exe"
 
 
 export PATH=~/.npm-global/bin:$PATH
+set -o vi
+

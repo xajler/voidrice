@@ -27,7 +27,7 @@ set $flash --no-startup-id bash ~/.config/Scripts/flash_win.sh
 #Music player daemon:
 exec --no-startup-id mpd
 #Torrent daemon:
-exec --no-startup-id transmission-daemon
+#exec --no-startup-id transmission-daemon
 #Wifi applet:
 exec --no-startup-id nm-applet
 #Mount other drives:
@@ -35,19 +35,19 @@ exec --no-startup-id sudo mount -a
 #Composite manager:
 exec --no-startup-id compton --xrender-sync --xrender-sync-fence
 #Refresh bash/ranger shortcuts:
-exec --no-startup-id python ~/.config/Scripts/shortcuts.py
+#exec --no-startup-id python ~/.config/Scripts/shortcuts.py
 #Try to load VGA screen if available:
-exec --no-startup-id ~/.config/Scripts/screen.sh v
+#exec --no-startup-id ~/.config/Scripts/screen.sh v
 #Launch Polybar where appropriate:
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #Start the offlineimap daemon;
-exec --no-startup-id killall python ~/.config/Scripts/offlineimap-daemon.py
-exec --no-startup-id python ~/.config/Scripts/offlineimap-daemon.py
+#exec --no-startup-id killall python ~/.config/Scripts/offlineimap-daemon.py
+#exec --no-startup-id python ~/.config/Scripts/offlineimap-daemon.py
 #Add wallpaper:
 #exec --no-startup-id feh --bg-scale ~/.config/wall.png
 exec_always --no-startup-id wal -c -i ~/.config/wall.png
 #Remaps the caps lock button to escape and uses the US international keyboard with dead keys
-exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id setxkbmap -layout dvorak -option caps:escape
 #exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 #Remap Menu button to Super:
 #exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_L'
@@ -168,7 +168,7 @@ bindsym $mod+q			kill
 bindsym $mod+Shift+q		kill
 
 bindsym $mod+w			exec --no-startup-id $term -e w3m http://lukesmith.xyz
-bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
+bindsym $mod+Shift+w		exec --no-startup-id firefox-developer-edition
 
 bindsym $mod+e			exec $term -e neomutt
 #bindsym $mod+Shift+e

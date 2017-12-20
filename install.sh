@@ -1,4 +1,4 @@
-sudo pacman -S rxvt-unicode ranger qutebrowser mutt msmtp offlineimap calcurse ncmpcpp moc mpv compton mpd htop weechat w3m youtube-dl ffmpeg feh rofi arandr mpd scrot mpc mirage r tmux
+sudo pacman -S rxvt-unicode ranger qutebrowser mutt msmtp offlineimap calcurse ncmpcpp moc mpv compton mpd htop weechat w3m youtube-dl ffmpeg feh rofi arandr mpd scrot mpc mirage r tmux gnome-keyring
 # packer -S 
 # polybar 
 # pamixer 
