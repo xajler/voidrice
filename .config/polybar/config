@@ -50,8 +50,8 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = mono:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-0 = xos4 Terminus:pixelsize=10:antialias=true;1
+font-1 = uniformat:fontformat=truetype:size=10:antialias=true;0
 font-2 = fontawesome:pixelsize=10;1
 
 modules-left = i3 mpd
@@ -318,7 +318,7 @@ mapping = true
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 98
+full-at = 100
 
 #format-charging = Charging... <label-charging>
 format-charging = <animation-charging> <label-charging>
@@ -373,7 +373,7 @@ hwmon-path = /sys/class/hwmon/hwmon0/temp2_input
 [module/hwmon]
 type = custom/script
 exec = ~/.config/polybar/temp.sh
-# exec = cat /sys/class/hwmon/hwmon1/temp2_input  | awk '{print substr($1, 1, 2) "°C"}' 
+#exec = cat /sys/class/hwmon/hwmon1/temp2_input  | awk '{print substr($1, 1, 2) "°C"}' 
 interval = 2
 
 format-prefix = " "
