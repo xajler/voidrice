@@ -1,0 +1,36 @@
+{
+	"auto_coplete": false,
+	"file_exclude_patterns":
+	[
+		".*",
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db"
+	],
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_numbers": false,
+	"show_navigation_bar": false,
+	"spell_check": true,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

@@ -1,4 +1,4 @@
-sudo pacman -S rxvt-unicode ranger qutebrowser mutt msmtp offlineimap calcurse ncmpcpp moc mpv compton mpd htop weechat w3m youtube-dl ffmpeg feh rofi arandr mpd scrot mpc mirage r tmux gnome-keyring  urxvt-perls xautolock imagemagik mupdf fzf cmatrix openvpn networkmanager-openvpn
+sudo pacman -S rxvt-unicode ranger qutebrowser mutt msmtp offlineimap calcurse ncmpcpp moc mpv compton mpd htop weechat w3m youtube-dl ffmpeg feh rofi arandr mpd scrot mpc mirage r tmux gnome-keyring  urxvt-perls xautolock imagemagick mupdf fzf cmatrix openvpn networkmanager-openvpn gimp terminus-font
 # packer -S 
 # polybar 
 # pamixer 
