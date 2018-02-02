@@ -1,0 +1,87 @@
+    1  chsh
+    2  pwd
+    3  mkdir -p src
+    4  cd src
+    5  ssh
+    6  git clone git@github.com:xajler/voidrice.git
+    7  cd 
+    8  cd .ssh/
+    9  chmod 600 id_rsa
+   10  chmod 644 id_rsa.pub
+   11  la
+   12  ls -al
+   13  cd ../src/
+   14  git clone git@github.com:xajler/voidrice.git
+   15  sudo pkg install bash-completion
+   16  vim /usr/local/share/doc/bash-completion/README.md 
+   17  clear
+   18  ls -al
+   19  cd voidrice/
+   20  cp .bash_profile .bashrc .Xdefaults .Rprofile .vimrc .xinitrc 
+   21  cp .bash_profile .bashrc .Xdefaults .Rprofile .vimrc .xinitrc ~/
+   22  ls -al ~/
+   23  cp -rf .config/ .vimrc .ncmpcpp/ .calcurse/ ~/
+   24  cd
+   25  la
+   26  ls -al
+   27  ls -al | more
+   28  cd .config
+   29  mkdir .config
+   30  ls .config/
+   31  rm -rf Scripts/ fontconfig/ gtk-* mutt/ .compton.conf.swp *.png compton.conf.old mimeapps.list user-dirs.dirs 
+   32  ls -al
+   33  mv feh i3 icc moc mpd mpv neofetch polybar qutebrowser ranger compton.conf .config/
+   34  ls -al .config
+   35  ls -al
+   36  vim config 
+   37  ls -al
+   38  rm -rf bindings conf config keys 
+   39  cd src/
+   40  cd voidrice/
+   41  cp -iprv .ncmpcpp/ ~/
+   42  ls -al ~/
+   43  rm -rf ~/config ~/bindings 
+   44  cp -iprv .ncmpcpp ~/
+   45  rm -rf ~/.ncmpcpp/
+   46  cp -iprv .ncmpcpp ~/
+   47  cp -rf .config/wall.png ~/.config/
+   48  ch -rf .vim ~/
+   49  cp -rf .vim ~/
+   50  cd la
+   51  ls -al
+   52  vim .vimrc 
+   53  vim .vimrc 
+   54  vim .vimrc 
+   55  vim .vimrc 
+   56  vim 
+   57  tree
+   58  vim .bashrc 
+   59  vim /usr/local/share/doc/bash-completion/README.md 
+   60  source .bashrc 
+   61  la
+   62  vim .bashrc 
+   63  la
+   64  vim .bashrc 
+   65  la
+   66  source .bashrc 
+   67  la
+   68  vim .bashrc 
+   69  git status
+   70  cd
+   71  vim .bashrc 
+   72  vim .bashrc 
+   73  vim .vimrc
+   74  vim 
+   75  vim .bashrc 
+   76  source .bashrc 
+   77  la
+   78  vim .bashrc 
+   79  source .bashrc 
+   80  la
+   81  exit
+   82  bash
+   83  exi
+   84  exit
+   85  la
+   86  history 
+   87  history > history.txt

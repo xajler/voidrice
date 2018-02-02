@@ -27,12 +27,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'dylanaraps/wal.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'racer-rust/vim-racer'
-Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do':  'make fsautocomplete' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
@@ -98,15 +95,6 @@ vnoremap H <gv
 "autocmd BufWritePost *.md !pandoc <C-r>% -o <C-r>&<Backspace><Backspace>pdf && evince <C-r>%<Backspace><Backspace>pdf
 "
 
-"" Racer
-set hidden
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
