@@ -31,6 +31,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 call plug#end()
 

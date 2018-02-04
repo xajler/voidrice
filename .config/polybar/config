@@ -9,9 +9,9 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color0}
-;background = #000
-background-alt = #444
+;background = ${xrdb:color0}
+background = #1b1918
+background-alt = #88807c 
 foreground = ${xrdb:color7}
 ;foreground = #dfdfdf
 foreground-alt = #555
@@ -24,19 +24,24 @@ col = #00f
 ;fg = ${xrdb:color7}
 green =  #5ab738
 
-[bar/example]
+[bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 ;monitor = ${env:MONITOR}
 monitor = ${env:MONITOR:LVDS-1}
+dpi = 135
 width = 100%
-height = 24
-;offset-x = 1%
-;offset-y = 1%
+height = 20
+offset-x = 1%
+offset-y = 0
 ;radius = 6.0
-fixed-center = false
+fixed-center = true
+bottom = false
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+#background = ${colors.background}
+background = #cc1b1918 
+#foreground = ${colors.foreground}
+foreground = #90d0bb
+;70d89a
 
 line-size = 3
 line-color = {$xrdb:color1}
@@ -44,19 +49,20 @@ line-color = {$xrdb:color1}
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 0
+padding-left = 2
+padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 0
 module-margin-right = 2
 
-font-0 = xos4 Terminus:pixelsize=10:antialias=true;1
-font-1 = uniformat:fontformat=truetype:size=10:antialias=true;0
-font-2 = fontawesome:pixelsize=10;1
+;font-0 = xos4 envypn:pixelsize=9:antialias=true;1
+font-0 = NotoSans-Regular:size=6;2
+font-1 = uniformat:fontformat=truetype:size=8:antialias=false;0
+font-2 = fontawesome:pixelsize=6;1
 
 modules-left = i3 mpd
-#modules-center = mpd
-modules-right = filesystem pkg hwmon volume battery vpncheck date 
+modules-center = date
+modules-right = home filesystem hwmon volume vpncheck battery 
 
 tray-position = right
 tray-padding = 0
@@ -65,7 +71,6 @@ tray-padding = 0
 
 ;wm-restack = bspwm
 ;wm-restack = i3
-
 ;override-redirect = true
 
 ;scroll-up = bspwm-desknext
@@ -112,6 +117,7 @@ interval = 25
 mount-0 = /home
 
 label-mounted = %{F#0a81f5}~%{F-}: %percentage_used%%
+label-mounted-underline = ${colors.primary}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -120,6 +126,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
+label-focused-foreground = #333333
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -171,6 +178,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 [module/mpd]
 type = internal/mpd
 format-online = <label-song> <label-time>
+;format-online-underline = ${colors.green}
 # <icon-prev> <toggle> <icon-next>
 #<toggle>
 
@@ -284,9 +292,9 @@ time = "%H:%M"
 ;time-alt = %H:%M:%S
 ;time-alt = %H:%M:%S
 
-format-prefix = ""
+;format-prefix = ""
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color12}
+;format-underline = ${xrdb:color12}
 ;format-underline = #0a6cf5
 
 label = %date% %time%
@@ -414,8 +422,8 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 [module/pkg]
 type = custom/script

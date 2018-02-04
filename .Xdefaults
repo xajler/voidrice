@@ -5,39 +5,38 @@
 !!*background: rgba(0, 0, 0, .7)
 
 !! black
-*color0: #1b1918
-*color8: #766e6b
+*color0: #766e6b
+*color8: #666666
 !! red
-*color1: #f22c40
-*color9: #f22c40
+*color1: #F15D22
+*color9: #CC0000
 !! green
-*color2: #5ab738
-*color10: #5ab738
+*color2: #73c48f
+*color10: #4e9a06
 !! yellow
-*color3: #d5911a
-*color11: #d5911a
+*color3: #ffce51
+*color11: #c4a000
 !! blue
-*color4: #407ee7
-*color12: #407ee7
+*color4: #48B9C7
+*color12: #3465a4
 !! magenta
-*color5: #6666ea
-*color13: #6666ea
+*color5: #ad7fa8
+*color13: #75507b
 !! cyan
-*color6: #00ad9c
-*color14: #00ad9c
+*color6: #34e2e2
+*color14: #06989a
 !! white
-*color7: #a8a19f
-*color15: #f1efee
+*color7: #EEEEEC
+*color15: #D3D7CF
 
 Xcursor.size: 		0
-XTerm*faceName: 	Terminus:size=9:antialias=true
+XTerm*faceName: 	xft:terminus:size=9:antialias=true
 
-URxvt.background:       [70]#000000
+URxvt.background:       [90]#111111
 URxvt.depth: 		32
 
 URxvt.intensityStyles:	false
-!! URxvt.font: 		xft:monospace:size=9
-URxvt.font:		9x15
+URxvt.font: 		xft:terminus:size=9
 URxvt.scrollBar:	false
 URxvt.cursorColor:	magenta
 URxvt.saveLines:    	5000
@@ -53,8 +52,8 @@ URxvt.url-select.underline: true
 !! keyboard-select
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
 !! resize-font
-URxvt.resize-font.smaller: C-j
-URxvt.resize-font.bigger:  C-k
+!URxvt.resize-font.smaller: C-j
+!URxvt.resize-font.bigger:  C-k
 !! matcher
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button:	1
@@ -83,5 +82,3 @@ Xft.lcdfilter: lcddefault
 XTerm*background: #2b2b2b
 XTerm*foreground: #e7e7e7
 XTerm*pointerColor: #16A085
-XTerm*faceName: Fixed
-XTerm*faceSize: 11

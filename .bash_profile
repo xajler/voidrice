@@ -1,24 +1,9 @@
-#
-# ~/.bash_profile
-#
+# .bash_profile
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# Get the aliases and functions
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR"  ] && [ "$XDG_VTNR" -eq 1  ]; then
+
+if [ -z "$DISPLAY" ]; then
 	startx
 fi
-
-
-#[ -z "$DISPLAY" -a "$(fgconsole)" -eq 1 ] && exec startx
-
-if [[ -f /usr/bin/waterfox ]]; then
-	export BROWSER="waterfox"
-elif [[ -f /usr/bin/palemoon ]]; then
-	export BROWSER="palemoon"
-elif [[ -f /usr/bin/iceweasel ]]; then
-	export BROWSER="iceweasel"
-else
-	export BROWSER="firefox"
-fi
-
-PATH=~/.npm-global/bin:$PATH
