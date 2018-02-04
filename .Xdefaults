@@ -5,6 +5,7 @@
 !!*background: rgba(0, 0, 0, .7)
 
 !! black
+!*color0: #88807C
 *color0: #766e6b
 *color8: #666666
 !! red
@@ -52,8 +53,8 @@ URxvt.url-select.underline: true
 !! keyboard-select
 URxvt.keysym.M-Escape:  perl:keyboard-select:activate
 !! resize-font
-!URxvt.resize-font.smaller: C-j
-!URxvt.resize-font.bigger:  C-k
+URxvt.resize-font.smaller: C-j
+URxvt.resize-font.bigger:  C-k
 !! matcher
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button:	1
