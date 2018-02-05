@@ -44,8 +44,9 @@ Install Vim Plugs (inside vim)
 
 Install sound
 
-    sudo xbps-install alsa-utils alsa-plugins alsa-lib alsa-firmware 
-
+    sudo xbps-install -S alsa-utils alsa-plugins alsa-lib alsa-firmware 
+    sudo xbps-install -S alsa-utils pulseaudio ConsoleKit2 pavucontrol
+ 
 Install xorg 
 
     sudo xbps-install -S xorg-server xorg-apps xorg-minimal xinit xterm
@@ -53,16 +54,18 @@ Install xorg
 
 Install apps
  
-    sudo xbps-install rxvt-unicode ranger qutebrowser calcurse mpd mpc mpv compton htop
-    sudo xbps-install youtube-dl ffmpeg feh rofi arandr scrot mirage r tmux urxvt-perls  lxappearance xautolock mupdf cmatrix openvpn terminus-font 
-    sudo xbps-install youtube-dl ffmpeg feh rofi arandr scrot mirage tmux urxvt-perls  lxappearance xautolock mupdf cmatrix openvpn terminus-font 
-    sudo xbps-install font-unifont-bdf font-awesome
-    sudo xbps-install i3-gaps i3status i3lock i3blocks 
-    sudo xbps-install acpi playerctl sysstat 
-    nf
-    sudo xbps-install polybar
-    sudo xbps-install xcalib
-    sudo xbps-install unclutter
+    sudo xbps-install -S rxvt-unicode ranger qutebrowser calcurse mpd mpc mpv compton htop
+    sudo xbps-install -S youtube-dl ffmpeg feh rofi arandr scrot mirage tmux urxvt-perls  
+    sudo xpbs-install -S lxappearance xautolock mupdf cmatrix openvpn terminus-font ncmpcpp
+    sudo xbps-install -S font-unifont-bdf font-awesome
+    sudo xbps-install -S i3-gaps i3status i3lock i3blocks 
+    sudo xbps-install -S acpi playerctl sysstat tree ImageMagick
+    sudo xbps-install -S polybar
+    sudo xbps-install -S xcalib
+    sudo xbps-install -S unclutter
+    sudo xbps-install -S noto-fonts-ttf 
+    sudo xbps-install envypn-font 
+    sudo xbps-install -S firefox
 
 Copy config dotfiles from git
 
@@ -81,7 +84,83 @@ Add URxvt font resize
 Link and start services
 
     la /var/service
+    sudo ln -s /etc/sv/dbus /var/service
+    sudo ln -s /etc/sv/tlp /var/service
+    sudo ln -s /etc/sv/cgmanager /var/service
+    sudo ln -s /etc/sv/consolekit /var/service
     sudo ln -s /etc/sv/mpd /var/service
+    sudo ln -s /etc/sv/wpa_supplicant /var/service
     sudo sv status mpd
     sudo sv up mpd
+    reboot # easier than up all
+
+WiFi config
+
+    # enter root
+    su 
+    cp /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf 
+    vim /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf 
+    wpa_passphrase <SSID> <password> >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf 
+
+    # test confing
+    wpa_supplicant -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
+
+    # exit root
+    exit
+
+    # set up wifi and test it
+    sudo ip link set wlp3s0 up
+    ip addr
+    ping -c 3 ksphoto.me
+
+ProtonVPN 
+
+    # Create dir for openvpn cilent
+    sudo mkdir -p /etc/openvpn/client
+
+    # Create login conf with ProtonVPN username pass
+    # First line in file: proton account user
+    # Second line in file: proton account pass
+    sudo vim /etc/openvpn/client/login.conf
+
+    # Make this file only readable by root
+    sudo chmod 600 /etc/openvpn/client/login.conf
+
+    # Copy all ProtonVPN .ovpn to openvpn client    
+    sudo cp ~/Downloads/*.ovpn /etc/openvpn/client
+
+Patch ProtonVPN ovpn's
+
+    # Open ProtonVPN ovpn
+    sudo vim /etc/openvpn/client/de-03.protonvpn.com.udp1194.ovpn
+
+    # add login.conf to auth-user-pass
+    auth-user-pass /etc/openvpn/client/login.conf
+
+    # Comment two lines calling update-resolv-conf, create runit services
+    #up /etc/openvpn/update-resolv-conf
+    #down /etc/openvpn/update-resolv-conf
+
+Create ProtonVPN runit services
+
+    # TODO
+
+Test sound with speakers and headphones
+
+    # make sure nothing is at 0 or use pavucontrol
+    alsamixer 
+
+    # unmute muted devices
+    pavucontrol 
+
+Test urxvt font
+
+    urxvt -fn 'xft:terminus:pixelsize=13'
+
+Test calibration file
+    # Get display name
+    echo $DISPLAY
+
+    # Test running Lenovo ThinkPad x220 
+    xcalib -d :0 .config/icc/Profiles/Color-LCD-#1-2016-02-16-02-0-2.2-F-S-XYZLUT+MTX.icc
 
