@@ -38,7 +38,7 @@ fixed-center = true
 bottom = false
 
 #background = ${colors.background}
-background = #cc1b1918 
+background = #661b1918 
 #foreground = ${colors.foreground}
 foreground = #90d0bb
 ;70d89a

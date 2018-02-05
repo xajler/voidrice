@@ -33,7 +33,7 @@
 Xcursor.size: 		0
 XTerm*faceName: 	xft:terminus:size=9:antialias=true
 
-URxvt.background:       [90]#111111
+URxvt.background:       [80]#000000
 URxvt.depth: 		32
 
 URxvt.intensityStyles:	false
