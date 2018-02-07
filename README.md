@@ -69,11 +69,12 @@ Install apps
 
 Copy config dotfiles from git
 
+    # Create .config if it is note existing
     mkdir ~/.config
     cd ~/src/voidrice/
     cp -rf .ncmpcpp .xinitrc .calcurse ~/
     cd ~/src/voidrice/.config/
-    cp -rf feh i3 icc moc mpd mpv neofetch polybar qutebrowser ranger compton.conf wall.png user-dirs.dirs ~/.config
+    cp -rf * ~/.config/
 
 Add URxvt font resize
 
