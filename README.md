@@ -8,7 +8,7 @@ Install elementary software
 
     sudo xbps-install -S git vim
     sudo xbps-install -S bash-completion neofetch
-    sudo xbps-install -S tlp powertop hardinfo htop lm_sensors fzf
+    sudo xbps-install -S tlp powertop hardinfo htop lm_sensors fzf intel-ucode
 
 
 Crete user's folders
@@ -64,7 +64,7 @@ Install apps
     sudo xbps-install -S xcalib
     sudo xbps-install -S unclutter
     sudo xbps-install -S noto-fonts-ttf 
-    sudo xbps-install envypn-font 
+    sudo xbps-install -S envypn-font 
     sudo xbps-install -S firefox
 
 Copy config dotfiles from git
@@ -88,22 +88,25 @@ Link and start services
     sudo ln -s /etc/sv/tlp /var/service
     sudo ln -s /etc/sv/cgmanager /var/service
     sudo ln -s /etc/sv/consolekit /var/service
-    sudo ln -s /etc/sv/mpd /var/service
+    # use mpd start in i3 config
+    #sudo ln -s /etc/sv/mpd /var/service
     sudo ln -s /etc/sv/wpa_supplicant /var/service
     sudo sv status mpd
     sudo sv up mpd
     reboot # easier than up all
 
-WiFi config
+WiFi config (WPA)
 
     # enter root
     su 
     cp /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf 
-    vim /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf 
     wpa_passphrase <SSID> <password> >> /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf 
 
     # test confing
     wpa_supplicant -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf
+
+    # Remove current wifi device 'wlp3s0' setup
+     sudo rm /run/wpa_supplicant/wlp3s0
 
     # exit root
     exit
@@ -112,6 +115,37 @@ WiFi config
     sudo ip link set wlp3s0 up
     ip addr
     ping -c 3 ksphoto.me
+
+Multiple WiFi networks (WPA)
+
+    # TODO
+
+WiFi WEP notes
+
+    # enter root
+    su 
+    cp /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant-<SSID-name>.conf 
+    sudo vim /etc/wpa_supplicant/wpa_supplicant-<SSID-name>.conf
+    # Add this text and change SSID and Wep key:
+    network={
+        ssid="MYSSID"
+        key_mgmt=NONE
+        wep_key0="YOUR AP WEP KEY"
+        wep_tx_keyidx=0
+        auth_alg=SHARED
+    }
+
+Temporary WiFi config (WPA)
+
+    sudo sv stop wpa_supplicant
+    # enter root
+    su 
+    cp /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant-<SSID-name>.conf 
+    wpa_passphrase <SSID> <password> >> /etc/wpa_supplicant/wpa_supplicant-<SSID-name>.conf 
+
+    # Run and connect
+    wpa_supplicant -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant-<SSID-name>.conf &
+    
 
 ProtonVPN 
 
@@ -144,6 +178,12 @@ Patch ProtonVPN ovpn's
 Create ProtonVPN runit services
 
     # TODO
+
+Bluetooh
+    
+    sudo xbps-install -S bluez
+    # Turn off bluetooth, use 'on' to turn it  on
+    sudo bluetooth off 
 
 Test sound with speakers and headphones
 
