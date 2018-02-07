@@ -31,13 +31,16 @@ Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'PotatoesMaster/i3-vim-syntax'
 
 call plug#end()
 
 nnoremap S :%s//g<Left><Left>
 vnoremap S noop
 vnoremap S :s//g<Left><Left>
+
+" No Hell's bells please!
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 "Make calcurse notes markdown compatible:
 autocmd BufRead,BufNewFile /tmp/calcurse* set filetype=markdown
