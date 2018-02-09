@@ -1,7 +1,7 @@
 # Install Void Linux
 
 
-![void](void.jpg)
+![void](void.png)
 
 Update Void Linux
 
