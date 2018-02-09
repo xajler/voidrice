@@ -62,7 +62,7 @@ font-2 = fontawesome:pixelsize=6;1
 
 modules-left = i3 mpd
 modules-center = date
-modules-right = home filesystem hwmon volume vpncheck battery 
+modules-right = home filesystem pkg hwmon volume vpncheck battery 
 
 tray-position = right
 tray-padding = 0

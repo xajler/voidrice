@@ -1,5 +1,8 @@
 # Install Void Linux
 
+
+![void](void.jpg)
+
 Update Void Linux
 
     sudo xbps-install -Syu
